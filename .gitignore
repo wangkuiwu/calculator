@@ -1,0 +1,12 @@
+
+
+*.[sS]
+*.o
+*.txt
+*.swp
+*.svn
+*.vim
+*.tgz
+*.class
+
+
