@@ -1,10 +1,11 @@
-package com.skw.calculator;
+package cn.skw.calculator;
+
 /**
- * 异常
+ * 计算异常
  *
  * @author skywang
+ * @e-mail kuiwu-wang@163.com
  */
-
 public class UnparsableEquationException extends Exception {
 
     public UnparsableEquationException(String msg) {

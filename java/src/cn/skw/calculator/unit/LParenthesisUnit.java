@@ -1,13 +1,14 @@
+package cn.skw.calculator.unit;
+
+import java.util.List;
+import cn.skw.calculator.UnparsableEquationException;
+
 /**
  * 左括号
  *
  * @author skywang
+ * @e-mail kuiwu-wang@163.com
  */
-package com.skw.calculator.unit;
-
-import java.util.List;
-import com.skw.calculator.UnparsableEquationException;
-
 public class LParenthesisUnit extends BracketUnit {
 
     /**

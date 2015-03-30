@@ -1,14 +1,15 @@
+package cn.skw.calculator.operation;
+
+import java.util.List;
+import cn.skw.calculator.unit.Unit;
+import cn.skw.calculator.UnparsableEquationException;
+
 /**
  * 运算操作接口
  *
  * @author skywang
+ * @e-mail kuiwu-wang@163.com
  */
-package com.skw.calculator.operation;
-
-import java.util.List;
-import com.skw.calculator.unit.Unit;
-import com.skw.calculator.UnparsableEquationException;
-
 public abstract class Operation {
 
     String name;

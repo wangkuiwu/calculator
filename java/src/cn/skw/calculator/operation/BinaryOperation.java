@@ -1,15 +1,16 @@
-/**
- * 运算操作接口
- *
- * @author skywang
- */
-package com.skw.calculator.operation;
+package cn.skw.calculator.operation;
 
 import java.util.List;
-import com.skw.calculator.unit.Unit;
-import com.skw.calculator.unit.NumberUnit;
-import com.skw.calculator.UnparsableEquationException;
+import cn.skw.calculator.unit.Unit;
+import cn.skw.calculator.unit.NumberUnit;
+import cn.skw.calculator.UnparsableEquationException;
 
+/**
+ * 双目运算操作
+ *
+ * @author skywang
+ * @e-mail kuiwu-wang@163.com
+ */
 public abstract class BinaryOperation extends Operation {
 
     public BinaryOperation(String name) {

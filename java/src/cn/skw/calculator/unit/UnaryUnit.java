@@ -1,16 +1,17 @@
+package cn.skw.calculator.unit;
+
+import java.util.List;
+import cn.skw.calculator.UnparsableEquationException;
+import cn.skw.calculator.operation.Operation;
+
 /**
  * 单目运算符
  *
  * 例如，sin/cos/tan/ln/log/abs/sqrt等，都是单目运算符
  *
  * @author skywang
+ * @e-mail kuiwu-wang@163.com
  */
-package com.skw.calculator.unit;
-
-import java.util.List;
-import com.skw.calculator.UnparsableEquationException;
-import com.skw.calculator.operation.Operation;
-
 public class UnaryUnit extends OperatorUnit {
 
     /**

@@ -1,3 +1,8 @@
+package cn.skw.calculator.unit;
+
+import java.util.List;
+import cn.skw.calculator.UnparsableEquationException;
+
 /**
  * 算式的运算单元
  *
@@ -34,17 +39,9 @@
  *  (10) 0    -- 是NumberUnit(即，"数字"单元)
  *
  *
- *
- *
  * @author skywang
- * @email kuiwu-wang@163.com
- * @blog http://wangkuiwu.github.com
+ * @e-mail kuiwu-wang@163.com
  */
-package com.skw.calculator.unit;
-
-import java.util.List;
-import com.skw.calculator.UnparsableEquationException;
-
 public abstract class Unit {
 
     String value;

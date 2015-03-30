@@ -1,13 +1,14 @@
+package cn.skw.calculator.unit;
+
+import java.util.List;
+import cn.skw.calculator.UnparsableEquationException;
+
 /**
  * 括号
  *
  * @author skywang
+ * @e-mail kuiwu-wang@163.com
  */
-package com.skw.calculator.unit;
-
-import java.util.List;
-import com.skw.calculator.UnparsableEquationException;
-
 public abstract class BracketUnit extends Unit {
 
     public BracketUnit(String value) {

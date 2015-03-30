@@ -1,5 +1,11 @@
-package com.skw.calculator.util;
+package cn.skw.calculator.util;
 
+/**
+ * 工具类
+ *
+ * @author skywang
+ * @e-mail kuiwu-wang@163.com
+ */
 public class Util {
 
     // 调试开关

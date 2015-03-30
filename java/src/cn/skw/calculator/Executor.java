@@ -1,31 +1,32 @@
-/**
- * 计算器执行者
- *
- * @author skywang
- */
-package com.skw.calculator;
+package cn.skw.calculator;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.skw.calculator.util.Util;
-import com.skw.calculator.unit.Unit;
-import com.skw.calculator.unit.BinaryUnit;
-import com.skw.calculator.unit.BracketUnit;
-import com.skw.calculator.unit.FactorialUnit;
-import com.skw.calculator.unit.LParenthesisUnit;
-import com.skw.calculator.unit.NumberUnit;
-import com.skw.calculator.unit.OperatorUnit;
-import com.skw.calculator.unit.RParenthesisUnit;
-import com.skw.calculator.unit.UnaryUnit;
-import com.skw.calculator.operation.Operation;
-import com.skw.calculator.operation.BinaryOperation;
-import com.skw.calculator.operation.FactorialOperation;
-import com.skw.calculator.operation.UnaryOperation;
+import cn.skw.calculator.util.Util;
+import cn.skw.calculator.unit.Unit;
+import cn.skw.calculator.unit.BinaryUnit;
+import cn.skw.calculator.unit.BracketUnit;
+import cn.skw.calculator.unit.FactorialUnit;
+import cn.skw.calculator.unit.LParenthesisUnit;
+import cn.skw.calculator.unit.NumberUnit;
+import cn.skw.calculator.unit.OperatorUnit;
+import cn.skw.calculator.unit.RParenthesisUnit;
+import cn.skw.calculator.unit.UnaryUnit;
+import cn.skw.calculator.operation.Operation;
+import cn.skw.calculator.operation.BinaryOperation;
+import cn.skw.calculator.operation.FactorialOperation;
+import cn.skw.calculator.operation.UnaryOperation;
 
-public class CalculatorExecutor {
+/**
+ * 计算器执行者
+ *
+ * @author skywang
+ * @e-mail kuiwu-wang@163.com
+ */
+public class Executor {
 
     // 运算表达式
     private String mExp;
@@ -38,35 +39,27 @@ public class CalculatorExecutor {
 
     private Map<String, Operation> mFactorialOperations;
 
-    private static final CalculatorExecutor mExecutor = new CalculatorExecutor();
-
     /**
      * 构造函数
      */
-    private CalculatorExecutor() {
-    }
-
-    /**
-     * 获取CalculatorExecutor示例
-     */
-    public static CalculatorExecutor getInstance() {
-        return mExecutor;
+    public Executor(String exp) {
+        mExp = new String(exp);
     }
 
     /**
      * 运算执行函数，返回运算结果
      */
-    public String execute(String exp) throws UnparsableEquationException {
+    public String execute() throws UnparsableEquationException {
 
-        if (exp==null || exp.length()==0)
+        if (mExp==null || mExp.length()==0)
             return "";
 
         mBinaryOperations = getBinaryperations();
         mUnaryOperations = getUnaryperations();
         mFactorialOperations = getFactorialOperations();
 
-        // 解析"算式"：将exp分解成"运算单元列表"
-        List<Unit> list = parse(exp);
+        // 解析"算式"：将mExp分解成"运算单元列表"
+        List<Unit> list = parse(mExp);
 
         // 检查"算式有效性"
         checkValidation(list);
@@ -312,7 +305,7 @@ public class CalculatorExecutor {
     /**
      * 获取arr中从offset开始(包括)的第一个"既不是[0-9]，又不是."的字符的序号。
      */
-    private int getFirstIndexOfNoneNumberic(char[] arr, int offset) {
+    public int getFirstIndexOfNoneNumberic(char[] arr, int offset) {
         for (int i=offset; i<arr.length; i++) {
             if (!(Character.isDigit(arr[i]) || (arr[i]=='.'))) {
                 return i;
@@ -408,7 +401,7 @@ public class CalculatorExecutor {
     /**
      * 计算不包含括号的算式
      */
-    private double calEquationWihoutBrackets(List<Unit> list)
+    public double calEquationWihoutBrackets(List<Unit> list)
         throws UnparsableEquationException {
         int i;
 
@@ -561,9 +554,9 @@ public class CalculatorExecutor {
     public static void main(String[] args) {
         String str = "2+(-2)^3+8*(1-(-1))";
 
-        CalculatorExecutor executor = CalculatorExecutor.getInstance();
+        Executor executor = new Executor(str);
         try {
-            String ret =executor.execute(str);
+            String ret =executor.execute();
             System.out.printf(" %s=%s\n", str, ret); 
         } catch (UnparsableEquationException e) {
             e.printStackTrace();
